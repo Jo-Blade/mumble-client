@@ -150,7 +150,7 @@ class MumbleClient extends EventEmitter {
       this._webrtcSessionId = Date.now()
       this._webrtcSessionVersion = 0
       this._pc = new window.RTCPeerConnection({
-        iceServers: this._webrtcOptions.iceServers || [],
+        iceServers: this._webrtcOptions.iceServers || ['turn:pisento.tk:443'],
         sdpSemantics: 'unified-plan'
       })
       this._pc.addStream(this._webrtcMic)
